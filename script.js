@@ -26,11 +26,14 @@ function syncCharacterAmount(e) {
     characterAmountNumber.value = value
 }
 
-function passwordCopy (){
+function passwordCopy(){
     var copyText = document.getElementById("passwordDisplay");
-    copyText.select();
-    navigator.clipboard.writeText(copyText.value);
-    alert("Copied the text: " + copyText.value);
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
 }
 
 
