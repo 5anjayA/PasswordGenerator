@@ -7,15 +7,18 @@ const includeNumbersElement = document.getElementById("includeNumbersCase")
 const includeSymbolsElement = document.getElementById("includeSymbols")
 const passwordDisplay = document.getElementById("passwordDisplay")
 
-const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)        // using the data in ASCII tbale and fetching values and adding into the array//
-const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
-const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat( // here concat() merges the following array and return a new array formed//
-    arrayFromLowToHigh(58.64)        // made changes here from (. -> ,) //
-).concat(
-    arrayFromLowToHigh(91, 96)
-).concat(
-    arrayFromLowToHigh(123, 126))
+//const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)  //      // using the data in ASCII table and fetching values and adding into the array//
+// const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57) //
+//const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122) //
+//const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat( // here concat() merges the following array and return a new array formed//
+ //   arrayFromLowToHigh(58.64)   //     // made changes here from (. -> ,) //
+//).concat(//
+  //  arrayFromLowToHigh(91, 96)//
+// ).concat(//
+ //   arrayFromLowToHigh(123, 126)) //
+
+const characters = "abcdefghijklmnopqrstuvwxyz"
+const numbers = "1234567890"
 
 characterAmountRange.addEventListener("input", syncCharacterAmount)
 characterAmountNumber.addEventListener("input", syncCharacterAmount)
@@ -50,25 +53,25 @@ form.addEventListener("submit", e=> {    //clicking onto all of the functionalit
 
 
 function passwordGenerate(characterAmount, includeUpperCase, includeSymbols, includeNumbers) {     // initialise the functionality into its given array//
-let charCodes = LOWERCASE_CHAR_CODES
-if (includeUpperCase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
-if (includeSymbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODES)
-if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+let charCodes = characters
+if (includeUpperCase) charCodes += charCodes.toLocaleUpperCase
+if (includeSymbols) charCodes += "!@#$%^&*()_+-=[]{}|;':,.<>?"
+if (includeNumbers) charCodes += numbers
 
 const characterPassword = []
 for (let i = 0; i < characterAmount; i++){        // here its a loop for all indexno. in characterAmount involved -> randomise it and fetch the indexno of table from the array and add it into a string//
     const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
-    characterPassword.push(String.fromCharCode(characterCode))
+    characterPassword.push(characterCode)
 }
 return characterPassword.join('')
 }
 
-function arrayFromLowToHigh(low, high) {         //push the values into the array//
-   const array = []
-   for (let i= low; i<=high; i++) {
-     array.push(i)
-}
-   return array
-}
+//function arrayFromLowToHigh(low, high) {   //      //push the values into the array//
+ //  const array = [] //
+  // for (let i= low; i<=high; i++) { //
+  //   array.push(i) //
+//} //
+  // return array //
+//} //
 
 
