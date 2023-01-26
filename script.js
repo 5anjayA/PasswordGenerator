@@ -1,6 +1,6 @@
 const characterAmountRange = document.getElementById("characterAmountRange")
 const characterAmountNumber = document.getElementById("characterAmountNumber")
-const form = document.getElementById("getPasswordGen")
+//const form = document.getElementById("getPasswordGen")//
 const copyBtn = document.getElementById("copy-Btn")
 const includeUpperCaseElement = document.getElementById("includeUpperCase")
 const includeNumbersElement = document.getElementById("includeNumbersCase")
