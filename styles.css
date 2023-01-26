@@ -69,11 +69,11 @@ output{
     
 
 }
-/* .form{
+ .form{
 display:grid;
 grid-template-columns: auto auto;
-row-gap: 4rem; /**/*/
-
+row-gap: 3rem; /**/
+ }
 
 
 
