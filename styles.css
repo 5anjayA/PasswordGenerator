@@ -19,7 +19,7 @@ h1 {
     font-weight: 900;
     font-size: 30px;
     line-height: 0px;
-    letter-spacing: 0.025px;         /* em is a scalability unit = Font size of the element being styled x Specified value of the element being styled*/
+    letter-spacing: 0.025em;         /* em is a scalability unit = Font size of the element being styled x Specified value of the element being styled*/
 }
 h2 {
     color: rgb(164, 235, 58);           /* colour change*/
@@ -33,7 +33,7 @@ h2 {
     font-weight: 900;
     font-size: 30px;
     line-height: 0px;
-    letter-spacing: 0.035px; /**/
+    letter-spacing: 0.035em; /**/
 } 
 h3{
     color: whitesmoke;
@@ -47,14 +47,14 @@ h3{
     font-weight: 900;
     font-size: 20px;
     line-height: 0px;
-    letter-spacing: 0.035px; /**/
+    letter-spacing: 0.035em; /**/
 }
 O{
     background-color: white;
     color: black;
     font-size: 30px;
     width: 400px;
-    padding: 1px; /**/
+    padding: 1rem; /**/
     justify-content: center;
     display: flex;
     align-items: center;
@@ -65,14 +65,14 @@ O{
     flex-direction: column;
     display: flex;
     justify-content: center;
-    padding: 2px; /**/
+    padding: 2em; /**/
     
 
 }
 .form{
 display:grid;
 grid-template-columns: auto auto;
-row-gap: 3px; /**/
+row-gap: 3em; /**/
 ;
 
 
