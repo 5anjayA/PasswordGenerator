@@ -1,17 +1,17 @@
 const characterAmountRange = document.getElementById("characterAmountRange")
 const characterAmountNumber = document.getElementById("characterAmountNumber")
-//const form = document.getElementById("getPasswordGen")//
+const form = document.getElementById("getPasswordGen")
 const copyBtn = document.getElementById("copy-Btn")
 const includeUpperCaseElement = document.getElementById("includeUpperCase")
 const includeNumbersElement = document.getElementById("includeNumbersCase")
 const includeSymbolsElement = document.getElementById("includeSymbols")
 const passwordDisplay = document.getElementById("passwordDisplay")
 
-const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)        // using the data in charCode and fetching values and adding into the array//
+const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)        // using the data in ASCII tbale and fetching values and adding into the array//
 const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
-    arrayFromLowToHigh(58, 64)        // made changes here from (. -> ,) //
+const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat( // here concat() merges the following array and return a new array formed//
+    arrayFromLowToHigh(58.64)        // made changes here from (. -> ,) //
 ).concat(
     arrayFromLowToHigh(91, 96)
 ).concat(
@@ -20,7 +20,7 @@ const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 characterAmountRange.addEventListener("input", syncCharacterAmount)
 characterAmountNumber.addEventListener("input", syncCharacterAmount)
 
-function syncCharacterAmount(e) {        //synchronise the specified range value and number value to = characterAmount and then match with the values in charCode and print it out//
+function syncCharacterAmount(e) {        //synchronise the specified range value and number value to = characterAmount and then match with the values in ASCII table and print it out//
     const value = e.target.value
     characterAmountRange.value = value
     characterAmountNumber.value = value
@@ -49,14 +49,14 @@ form.addEventListener("submit", e=> {    //clicking onto all of the functionalit
 
 
 
-function passwordGenerate(characterAmount, includeUpperCase, includeSymbols, includeNumbers) {     /* initialise the functionality into its given array*/
+function passwordGenerate(characterAmount, includeUpperCase, includeSymbols, includeNumbers) {     // initialise the functionality into its given array//
 let charCodes = LOWERCASE_CHAR_CODES
 if (includeUpperCase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
 if (includeSymbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODES)
 if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
 
 const characterPassword = []
-for (let i = 0; i < characterAmount; i++){        // here its a loop for all indexno. in characterAmount involved -> randomise it and fetch the indexno charcode from the array and add it into a string//
+for (let i = 0; i < characterAmount; i++){        // here its a loop for all indexno. in characterAmount involved -> randomise it and fetch the indexno of table from the array and add it into a string//
     const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
     characterPassword.push(String.fromCharCode(characterCode))
 }
