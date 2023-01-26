@@ -65,14 +65,14 @@ output{
     flex-direction: column;
     display: flex;
     justify-content: center;
-    padding: 2em; /**/
+    padding: 2rem; /**/
     
 
 }
 .form{
 display:grid;
 grid-template-columns: auto auto;
-row-gap: 3em; /**/
+row-gap: 4rem; /**/
 ;
 
 
