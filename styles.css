@@ -49,7 +49,7 @@ h3{
     line-height: 0px;
     letter-spacing: 0.035em; /**/
 }
-output{
+p{
     background-color: white;
     color: black;
     font-size: 30px;
@@ -73,6 +73,7 @@ output{
 display:grid;
 grid-template-columns: auto auto;
 row-gap: 3rem; /**/
+
  }
 
 
